@@ -179,7 +179,6 @@
   <link name="hokuyo">
 
     <collision name="hokuyo_collision">
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size="0.1 0.1 0.1"/>
       </geometry>
@@ -195,8 +194,7 @@
       />
     </inertial>
 
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+    <visual name="hokuyo_mesh_visual">
       <geometry>
         <mesh filename="package://my_robot/meshes/hokuyo.dae"/>
       </geometry>
@@ -206,11 +204,27 @@
   </link>
 
   <joint name="hokuyo_joint" type="fixed">
+    <origin xyz="0.15 0 0.085" rpy=" 0 0 0"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="0.15 0 0.1" rpy=" 0 0 0"/>
     <parent link="chassis"/>
     <child link="hokuyo"/>
     
   </joint>
+  
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="chassis">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="camera">
+    <material>Gazebo/Blue</material>
+  </gazebo>
 
 </robot>
