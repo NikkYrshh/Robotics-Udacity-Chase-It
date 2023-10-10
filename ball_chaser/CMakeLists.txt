@@ -134,7 +134,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(drive_bot src/drive_bot.cpp)
 target_link_libraries(drive_bot ${catkin_LIBRARIES})
-add_dependencies(drive_bot ${PROJECT_NAME}_EXPORTED_TARGETS ${catkin_EXPORTED_TARGETS})
+add_dependencies(drive_bot ${PROJECT_NAME_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
 
